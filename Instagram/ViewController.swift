@@ -44,10 +44,10 @@ class ViewController: UIViewController {
         
         // 背景色、選択時の色を設定する
         tabBarController.selectedColor = UIColor(red: 1.0, green: 0.44, blue: 0.11, alpha: 1)
-        tabBarController.buttonsBackgroundColor = UIColor(red: 0.96, green: 0.91, blue: 0.8, alpha: 1)
+        tabBarController.buttonsBackgroundColor = UIColor(red: 0.96, green: 0.91, blue: 0.87, alpha: 1)
         tabBarController.selectionIndicatorHeight = 3
         
-        //作成したESTabBarControllerを親のViewController (=self)に追加する
+        // 作成したESTabBarControllerを親のViewController（＝self）に追加する
         addChildViewController(tabBarController)
         let tabBarView = tabBarController.view!
         tabBarView.translatesAutoresizingMaskIntoConstraints = false
@@ -61,25 +61,20 @@ class ViewController: UIViewController {
             ])
         tabBarController.didMove(toParentViewController: self)
         
-        //タブをタップした時に表示するViewControllerを設定する
+        // タブをタップした時に表示するViewControllerを設定する
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
         let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Setting")
         
         tabBarController.setView(homeViewController, at: 0)
         tabBarController.setView(settingViewController, at: 2)
         
-        //真ん中タブはボタンとして扱う
+        // 真ん中のタブはボタンとして扱う
         tabBarController.highlightButton(at: 1)
         tabBarController.setAction({
-            //ボタンが押されたらImageViewControllerlをモーダルで表示する
+            // ボタンが押されたらImageViewControllerをモーダルで表示する
             let imageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ImageSelect")
             self.present(imageViewController!, animated: true, completion: nil)
-        
         }, at: 1)
-    
     }
-    
-
-
 }
 
