@@ -18,8 +18,9 @@ class PostViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     
     // 投稿ボタンをタップしたときに呼ばれるメソッド
-    @IBAction func handlePostButton(sender: UIButton) {
-        // ImageViewから画像を取得する
+
+    @IBAction func handlePostButton(_ sender: UIButton) {
+    // ImageViewから画像を取得する
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.5)
         let imageString = imageData!.base64EncodedString(options: .lineLength64Characters)
         

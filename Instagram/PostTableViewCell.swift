@@ -34,6 +34,7 @@ class PostTableViewCell: UITableViewCell {
         let likeNumber = postData.likes.count
         likeLabel.text = "\(likeNumber)"
         
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         let dateString = formatter.string(from: postData.date!)

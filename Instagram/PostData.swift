@@ -28,7 +28,7 @@ class PostData: NSObject {
         imageString = valueDictionary["image"] as? String
         image = UIImage(data: Data(base64Encoded: imageString!, options: .ignoreUnknownCharacters)!)
         
-        self.caption = valueDictionary["name"] as? String
+        self.name = valueDictionary["name"] as? String
         
         self.caption = valueDictionary["caption"] as? String
         
