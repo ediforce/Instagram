@@ -10,6 +10,7 @@ import UIKit
 import CLImageEditor
 
 class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLImageEditorDelegate {
+    
     @IBAction func handleLibraryButton(_ sender: Any) {
         // ライブラリ（カメラロール）を指定してピッカーを開く
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -45,6 +46,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     // 写真を撮影/選択したときに呼ばれるメソッド
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if info[UIImagePickerControllerOriginalImage] != nil {

@@ -19,6 +19,9 @@ class PostData: NSObject {
     var date: Date?
     var likes: [String] = []
     var isLiked: Bool = false
+    //空の辞書の配列を作成
+    var comments = [[String:String]]()
+    //    var comments: [(name:String, text: String)] = []
     
     init(snapshot: DataSnapshot, myId: String) {
         self.id = snapshot.key
@@ -31,6 +34,11 @@ class PostData: NSObject {
         self.name = valueDictionary["name"] as? String
         
         self.caption = valueDictionary["caption"] as? String
+        
+        //コメント用に追加
+//        if let comments = valueDictionary["comments"] as? [[String:String]] {
+//            self.comments = comments
+//        }
         
         let time = valueDictionary["time"] as? String
         self.date = Date(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
@@ -45,6 +53,12 @@ class PostData: NSObject {
                 break
             }
         }
+        
+        if let comments = valueDictionary["comments"] as? [[String:String]] {
+            self.comments = comments
+        }
+
+
     }
 
 }

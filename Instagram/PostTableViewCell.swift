@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class PostTableViewCell: UITableViewCell {
+    
+    var postData:PostData!
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var commentLabel: UILabel!
+    
+    var postArray: [PostData] = []
+
+
+//    @IBAction func addComment(_ sender: Any) {
+//        let name = Auth.auth().currentUser?.displayName
+//
+//        if let commentText = commentLabel.text {
+//            postData.comments.append("\(name!): \(commentText)")
+//        }
+//    }
+    
+//    var comments: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +52,7 @@ class PostTableViewCell: UITableViewCell {
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         let likeNumber = postData.likes.count
         likeLabel.text = "\(likeNumber)"
-        
+
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -47,5 +66,12 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        
+        var text = ""
+        for i in 0 ..< postData.comments.count {
+            text = text + postData.comments[i]["name"]! + " ： " + postData.comments[i]["text"]!
+            text.append("\n")
+        }
+        self.commentLabel.text = text
     }
 }

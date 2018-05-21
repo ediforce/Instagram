@@ -317,6 +317,62 @@
             </objects>
             <point key="canvasLocation" x="3734" y="118"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="KiQ-1r-YnD">
+            <objects>
+                <viewController storyboardIdentifier="Comment" id="d1w-md-wZC" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bKx-vT-dCS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XfR-hA-0Ae">
+                                <rect key="frame" x="20" y="40" width="335" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="lvK-ON-BdW"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW3-Ea-MLO">
+                                <rect key="frame" x="20" y="140" width="335" height="40"/>
+                                <state key="normal" title="コメント投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentButton:" destination="d1w-md-wZC" eventType="touchUpInside" id="Fw1-9t-zaQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey8-MK-uYg">
+                                <rect key="frame" x="20" y="200" width="335" height="40"/>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="d1w-md-wZC" eventType="touchUpInside" id="HZQ-9e-bPq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ey8-MK-uYg" firstAttribute="top" secondItem="wW3-Ea-MLO" secondAttribute="bottom" constant="20" id="2YU-9L-rs8"/>
+                            <constraint firstItem="70H-RB-BvH" firstAttribute="trailing" secondItem="XfR-hA-0Ae" secondAttribute="trailing" constant="20" id="2mB-Ad-zum"/>
+                            <constraint firstItem="70H-RB-BvH" firstAttribute="trailing" secondItem="Ey8-MK-uYg" secondAttribute="trailing" constant="20" id="8SY-7y-ZuJ"/>
+                            <constraint firstItem="XfR-hA-0Ae" firstAttribute="top" secondItem="70H-RB-BvH" secondAttribute="top" constant="20" id="MnW-Xa-qUy"/>
+                            <constraint firstItem="70H-RB-BvH" firstAttribute="trailing" secondItem="wW3-Ea-MLO" secondAttribute="trailing" constant="20" id="UdC-Kn-53z"/>
+                            <constraint firstItem="XfR-hA-0Ae" firstAttribute="leading" secondItem="70H-RB-BvH" secondAttribute="leading" constant="20" id="V5P-V2-Pea"/>
+                            <constraint firstItem="wW3-Ea-MLO" firstAttribute="leading" secondItem="70H-RB-BvH" secondAttribute="leading" constant="20" id="b6x-Vu-65Y"/>
+                            <constraint firstItem="Ey8-MK-uYg" firstAttribute="leading" secondItem="70H-RB-BvH" secondAttribute="leading" constant="20" id="ohP-Rl-y2n"/>
+                            <constraint firstItem="wW3-Ea-MLO" firstAttribute="top" secondItem="XfR-hA-0Ae" secondAttribute="bottom" constant="20" id="pdF-BK-9Lm"/>
+                            <constraint firstItem="XfR-hA-0Ae" firstAttribute="centerX" secondItem="bKx-vT-dCS" secondAttribute="centerX" id="xIq-PK-6F0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="70H-RB-BvH"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="XfR-hA-0Ae" id="ZkV-Bc-E4j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qZ-oX-kl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4485" y="114"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
